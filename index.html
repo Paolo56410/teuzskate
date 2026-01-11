@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skate Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+    body {background:#f4f4f4;color:#222;line-height:1.6;}
+    
+    header {
+      background: linear-gradient(135deg,#111,#333);
+      color:white;
+      padding:80px 20px;
+      text-align:center;
+    }
+    header h1 {font-size:3rem;margin-bottom:15px;}
+    header p {font-size:1.2rem;max-width:700px;margin:auto;}
+    
+    section {padding:80px 20px;max-width:1200px;margin:auto;}
+    
+    .info-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
+    .info-card {background:white;padding:30px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+    .info-card:hover {transform:translateY(-5px);transition:0.3s;}
+    
+    .carousel {overflow:hidden;position:relative;margin-top:20px;border-radius:10px;}
+    .carousel-track {display:flex;transition:transform 0.5s ease;}
+    .offer {min-width:100%;text-align:center;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.1);overflow:hidden;background:white;display:flex;flex-direction:column;align-items:center;}
+    .offer img {width:100%;height:350px;object-fit:cover;}
+    .offer h3 {font-size:2rem;margin:15px 0;}
+    .offer p {padding:0 20px;margin-bottom:20px;}
+    
+    .carousel-buttons {display:flex;justify-content:center;gap:15px;margin-top:25px;}
+    .carousel-buttons button {padding:10px 20px;border:none;border-radius:5px;background:#222;color:white;cursor:pointer;}
+    .carousel-buttons button:hover {background:#444;}
+    
+    form {display:grid;gap:15px;max-width:400px;margin:auto;margin-top:40px;}
+    input,textarea {padding:10px;font-size:1rem;}
+    button.submit-btn {background:#111;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;}
+    button.submit-btn:hover {background:#444;}
+    
+    footer {background:#111;color:white;text-align:center;padding:40px 20px;margin-top:80px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Skate Academy</h1>
+  <p>Apprenez le skate en toute sécurité avec nos cours particuliers ou collectifs, et organisez vos événements avec nous.</p>
+</header>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:40px;">Nos Offres</h2>
+  <div class="carousel">
+    <div class="carousel-track" id="offers">
+      <div class="offer">
+        <img src="https://images.unsplash.com/photo-1603367139843-0f7c0e1cd3b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2thdGV8ZW58MHx8MHx8&ixlib=rb-4.0.3&q=80&w=1200" alt="Cours particulier">
+        <h3>Cours particuliers</h3>
+        <p>Un suivi personnalisé pour progresser vite et en sécurité.</p>
+      </div>
+      <div class="offer">
+        <img src="https://images.unsplash.com/photo-1508685096485-5b7b41a49f07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200" alt="Cours collectifs">
+        <h3>Cours collectifs</h3>
+        <p>One-shot ou trimestriel, vivez l’expérience du skate en groupe.</p>
+      </div>
+      <div class="offer">
+        <img src="https://images.unsplash.com/photo-1619155444471-39f295ccecf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200" alt="Événements mairie">
+        <h3>Événements pour mairies</h3>
+        <p>Nous organisons des démonstrations et ateliers pour les villes et associations.</p>
+      </div>
+      <div class="offer">
+        <img src="https://images.unsplash.com/photo-1562158077-83e46ab1270f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200" alt="Stages intensifs">
+        <h3>Stages intensifs</h3>
+        <p>Des sessions intensives pour préparer des compétitions ou booster vos skills.</p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-buttons">
+    <button onclick="prev()">←</button>
+    <button onclick="next()">→</button>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:40px;">Nos avantages</h2>
+  <div class="info-grid">
+    <div class="info-card">Encadrement par des pros diplômés</div>
+    <div class="info-card">Matériel fourni pour tous les cours</div>
+    <div class="info-card">Cours adaptés à tous les niveaux</div>
+    <div class="info-card">Flexibilité : horaires et formules</div>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:20px;">Contactez-nous</h2>
+  <form id="contact-form" action="https://formspree.io/f/xxxxxxx" method="POST">
+    <input type="email" name="email" placeholder="Renseignez votre email" required>
+    <textarea name="message" placeholder="Votre message"></textarea>
+    <button type="submit" class="submit-btn">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Skate Academy
+</footer>
+
+<script>
+  // Carousel
+  let index = 0;
+  const track = document.getElementById("offers");
+  const total = track.children.length;
+  function update() { track.style.transform = `translateX(-${index*100}%)`; }
+  function next() { index=(index+1)%total; update(); }
+  function prev() { index=(index-1+total)%total; update(); }
+</sc
