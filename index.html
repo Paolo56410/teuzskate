@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Skate Academy</title>
+  <title>Teuzskate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
@@ -45,7 +45,7 @@
 <body>
 
 <header>
-  <h1>Skate Academy</h1>
+  <h1>Teuzskate</h1>
   <p>Apprenez le skate en toute sécurité avec nos cours particuliers ou collectifs, et organisez vos événements avec nous.</p>
 </header>
 
@@ -53,23 +53,24 @@
   <h2 style="text-align:center;margin-bottom:40px;">Nos Offres</h2>
   <div class="carousel">
     <div class="carousel-track" id="offers">
+      <!-- Carrousel avec 4 images depuis ton repo -->
       <div class="offer">
         <img src="14.jpg" alt="Cours particulier">
         <h3>Cours particuliers</h3>
         <p>Un suivi personnalisé pour progresser vite et en sécurité.</p>
       </div>
       <div class="offer">
-        <img src="14.jpg" alt="Cours collectifs">
+        <img src="15.jpg" alt="Cours collectifs">
         <h3>Cours collectifs</h3>
         <p>One-shot ou trimestriel, vivez l’expérience du skate en groupe.</p>
       </div>
       <div class="offer">
-        <img src="14.jpg" alt="Événements mairie">
+        <img src="16.jpg" alt="Événements mairie">
         <h3>Événements pour mairies</h3>
         <p>Nous organisons des démonstrations et ateliers pour les villes et associations.</p>
       </div>
       <div class="offer">
-        <img src="14.jpg" alt="Stages intensifs">
+        <img src="1.JPG" alt="Stages intensifs">
         <h3>Stages intensifs</h3>
         <p>Des sessions intensives pour préparer des compétitions ou booster vos skills.</p>
       </div>
@@ -93,7 +94,7 @@
 
 <section>
   <h2 style="text-align:center;margin-bottom:20px;">Contactez-nous</h2>
-  <form id="contact-form" action="https://formspree.io/f/xpqalana" method="POST">
+  <form id="contact-form" action="https://formspree.io/f/abcdwxyz" method="POST">
     <input type="email" name="email" placeholder="Renseignez votre email" required>
     <textarea name="message" placeholder="Votre message"></textarea>
     <button type="submit" class="submit-btn">Envoyer</button>
@@ -101,7 +102,7 @@
 </section>
 
 <footer>
-  © 2025 Skate Academy
+  © 2025 Teuzskate
 </footer>
 
 <script>
@@ -112,4 +113,7 @@
   function update() { track.style.transform = `translateX(-${index*100}%)`; }
   function next() { index=(index+1)%total; update(); }
   function prev() { index=(index-1+total)%total; update(); }
-</sc
+</script>
+
+</body>
+</html>
