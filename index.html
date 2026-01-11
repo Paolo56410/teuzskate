@@ -7,7 +7,7 @@
   <style>
     * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
     body {background:#f4f4f4;color:#222;line-height:1.6;}
-    
+
     header {
       background: linear-gradient(135deg,#111,#333);
       color:white;
@@ -16,29 +16,52 @@
     }
     header h1 {font-size:3rem;margin-bottom:15px;}
     header p {font-size:1.2rem;max-width:700px;margin:auto;}
-    
+
     section {padding:80px 20px;max-width:1200px;margin:auto;}
-    
+
+    .intro-text {text-align:center;margin-bottom:60px; font-size:1.2rem; line-height:1.8;}
+
+    /* Présentation */
+    .presentation {
+      display:flex;
+      flex-wrap:wrap;
+      gap:30px;
+      background:#111;
+      color:white;
+      padding:50px 20px;
+      border-radius:10px;
+      margin-bottom:80px;
+    }
+    .presentation img {flex:1 1 300px; max-width:400px; border-radius:10px;}
+    .presentation .text {flex:2 1 400px; display:flex; flex-direction:column; justify-content:center;}
+
+    /* Avantages */
     .info-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
     .info-card {background:white;padding:30px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
     .info-card:hover {transform:translateY(-5px);transition:0.3s;}
-    
+
+    /* Carousel offres */
     .carousel {overflow:hidden;position:relative;margin-top:20px;border-radius:10px;}
     .carousel-track {display:flex;transition:transform 0.5s ease;}
     .offer {min-width:100%;text-align:center;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.1);overflow:hidden;background:white;display:flex;flex-direction:column;align-items:center;}
     .offer img {width:100%;height:350px;object-fit:cover;}
     .offer h3 {font-size:2rem;margin:15px 0;}
     .offer p {padding:0 20px;margin-bottom:20px;}
-    
     .carousel-buttons {display:flex;justify-content:center;gap:15px;margin-top:25px;}
     .carousel-buttons button {padding:10px 20px;border:none;border-radius:5px;background:#222;color:white;cursor:pointer;}
     .carousel-buttons button:hover {background:#444;}
+
+    /* FAQ */
+    .faq {margin-top:40px;}
+    .faq h3 {margin-bottom:10px;}
+    .faq-item {margin-bottom:20px; background:white; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
     
+    /* Formulaire */
     form {display:grid;gap:15px;max-width:400px;margin:auto;margin-top:40px;}
     input,textarea {padding:10px;font-size:1rem;}
     button.submit-btn {background:#111;color:white;border:none;padding:10px 20px;border-radius:5px;cursor:pointer;}
     button.submit-btn:hover {background:#444;}
-    
+
     footer {background:#111;color:white;text-align:center;padding:40px 20px;margin-top:80px;}
   </style>
 </head>
@@ -50,24 +73,50 @@
 </header>
 
 <section>
+  <div class="intro-text">
+    Teuz, c’est bien plus qu’un simple cours de skate.<br>
+    C’est un projet construit par un passionné diplômé, pour offrir un cadre fun, humain et motivant.<br>
+    On y apprend à rouler, mais surtout à gagner en confiance, à progresser avec plaisir, et à développer son autonomie.<br>
+    Adaptée aux débutants comme aux riders plus avancés, notre école propose un encadrement pro, du matériel de qualité, et une ambiance motivante.
+  </div>
+</section>
+
+<section class="presentation">
+  <img src="14.jpg" alt="Mickaël">
+  <div class="text">
+    <p>Pratiquant depuis l’âge de 10 ans, Mickaël a fait du skate bien plus qu’une passion : un mode de vie. Après avoir enseigné avec 123 Skate, une structure reconnue dans le milieu, il décide de créer Teuz Skate School pour transmettre ce qu’il a appris, sur la planche comme dans l’accompagnement.</p>
+    <p>Diplômé par la Fédération Française de Roller & Skate, il propose un encadrement sérieux, adapté à chaque niveau, avec une pédagogie centrée sur la progression, la confiance et l’autonomie. Son objectif : permettre à chaque jeune de s’épanouir dans la pratique, à son rythme, dans un cadre motivant et respectueux de la culture skate.</p>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:40px;">Nos avantages</h2>
+  <div class="info-grid">
+    <div class="info-card">Des séances adaptées et structurées pour évoluer à ton rythme, sans sauter d'étapes.</div>
+    <div class="info-card">Encadré par un skateur passionné diplômé par la Fédération Française de Roller & Skate.</div>
+    <div class="info-card">Skates, protections… Du matos de qualité à dispo pour rider en toute sécurité.</div>
+    <div class="info-card">Tu avances avec des personnes de ton niveau, ce qui booste la motivation et la progression.</div>
+  </div>
+</section>
+
+<section>
   <h2 style="text-align:center;margin-bottom:40px;">Nos Offres</h2>
   <div class="carousel">
     <div class="carousel-track" id="offers">
-      <!-- Carrousel avec 4 images depuis ton repo -->
       <div class="offer">
         <img src="14.jpg" alt="Cours particulier">
         <h3>Cours particuliers</h3>
-        <p>Un suivi personnalisé pour progresser vite et en sécurité.</p>
+        <p>Coaching personnalisé pour progresser à ton rythme.<br>Durée : 1h – Tarif : 35€</p>
       </div>
       <div class="offer">
-        <img src="15.jpg" alt="Cours collectifs">
-        <h3>Cours collectifs</h3>
-        <p>One-shot ou trimestriel, vivez l’expérience du skate en groupe.</p>
+        <img src="15.jpg" alt="Stage vacances">
+        <h3>Stage vacances</h3>
+        <p>Immersion skate intense pour passer au niveau supérieur.<br>Durée : 5h sur 5 jours – Prix : 100€</p>
       </div>
       <div class="offer">
-        <img src="16.jpg" alt="Événements mairie">
-        <h3>Événements pour mairies</h3>
-        <p>Nous organisons des démonstrations et ateliers pour les villes et associations.</p>
+        <img src="16.jpg" alt="Offre sur mesure">
+        <h3>Offre sur mesure</h3>
+        <p>Pour écoles, mairies, centres de loisirs... 100% adapté.<br>Niveau : Tous niveaux – Prix : Sur devis</p>
       </div>
       <div class="offer">
         <img src="1.JPG" alt="Stages intensifs">
@@ -82,13 +131,35 @@
   </div>
 </section>
 
-<section>
-  <h2 style="text-align:center;margin-bottom:40px;">Nos avantages</h2>
-  <div class="info-grid">
-    <div class="info-card">Encadrement par des pros diplômés</div>
-    <div class="info-card">Matériel fourni pour tous les cours</div>
-    <div class="info-card">Cours adaptés à tous les niveaux</div>
-    <div class="info-card">Flexibilité : horaires et formules</div>
+<section class="faq">
+  <h2 style="text-align:center;margin-bottom:40px;">FAQ — On répond à vos questions</h2>
+  <div class="faq-item">
+    <h3>À partir de quel âge peut-on commencer ?</h3>
+    <p>Les cours sont accessibles dès 6 ans. Il suffit d’avoir envie d’apprendre et de bouger.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Faut-il déjà savoir faire du skate ?</h3>
+    <p>Pas du tout ! Les cours sont adaptés à tous les niveaux, du tout débutant au rider avancé.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Qui encadre les séances ?</h3>
+    <p>Mickaël Caredc, éducateur diplômé par la Fédération Française de Roller et Skateboard, passionné depuis l'enfance et fondateur de Teuz Skate School.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Quel matériel est fourni ?</h3>
+    <p>Skates, protections, modules d’apprentissage : tout est fourni, récent et en bon état. Il suffit de venir prêt à rouler.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Où ont lieu les cours ?</h3>
+    <p>Les stages ont lieu au skatepark de Auray. Pour les cours particuliers, nous nous adaptons selon votre localisation (Bretagne Sud).</p>
+  </div>
+  <div class="faq-item">
+    <h3>Comment se déroule un cours ?</h3>
+    <p>Chaque séance suit une progression claire avec un objectif précis, des exercices adaptés au niveau du groupe, et des temps de pratique guidée.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Que faut-il apporter ?</h3>
+    <p>Des chaussures à semelle plate, une bouteille d’eau, et surtout de la motivation ! Tout le reste est prêt sur place.</p>
   </div>
 </section>
 
@@ -110,7 +181,10 @@
   let index = 0;
   const track = document.getElementById("offers");
   const total = track.children.length;
-  function update() { track.style.transform = `translateX(-${index*100}%)`; }
+
+  function update() {
+    track.style.transform = `translateX(-${index*100}%)`;
+  }
   function next() { index=(index+1)%total; update(); }
   function prev() { index=(index-1+total)%total; update(); }
 </script>
